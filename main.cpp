@@ -1,5 +1,5 @@
 #include "foo.h"
-#include<QtWidgets>
+//#include<QtWidgets>
 int main(int argc, char**argv)
 {
   hello_world();

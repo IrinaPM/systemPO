@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(hello)
 
 
-add_subdirectory( src )
+#add_subdirectory( src )
 
 
 set(SOURCE_LIB foo.cpp)

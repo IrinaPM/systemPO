@@ -1,19 +1,16 @@
 cmake_minimum_required(VERSION 3.8)
-project(hello)
+project(prg)
+set(SOURCE_EXE myApp.cpp)
+set(SOURCE_LIB simple.cpp)
+find_package(wxWidgets REQUIRED)
+include_directories(${wxWidgets_INCLUDE_DIRS})
+link_libraries(${wxWidgets_LIBRARY_DIRS})
+add_library(simple SHARED ${SOURCE_LIB})
+add_executable(MyApp ${SOURCE_EXE})
+add_definitions(-D__WXGTK__)
+target_link_libraries(myApp simple)
+target_link_libraries(myApp ${wxWidgets_LIBRARIES})
 
 
-#add_subdirectory( src )
 
-
-set(SOURCE_LIB foo.cpp)
-#set(SOURCE foo.cpp foo.h)
-
-#find_package(Qt5Widgets REQUIRED)
-#include_directories(${Qt5Widgets_INCLUDES})
-add_library(foo SHARED ${SOURCE_LIB})
-
-set(SOURCE_EXE main.cpp)
-add_executable(main ${SOURCE_EXE})
-target_link_libraries(main foo)
-#target_link_libraries(main Qt5::Widgets)
 
